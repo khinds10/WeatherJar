@@ -1,6 +1,10 @@
 # WeatherJar - Weather and Temperature at a glance
 Using this magic jar, you can tell the current temperature and conditions outside instantly
 
+**Color Range 0 to 100*F**
+
+![Color Range 0 to 100*F](https://raw.githubusercontent.com/khinds10/WeatherJar/master/webserver/neopixel.png)
+
 #### Flashing RaspberriPi Hard Disk / Install Required Software (Using Ubuntu Linux)
 
 Download "RASPBIAN JESSIE LITE"
@@ -124,22 +128,36 @@ Add the following lines to have your raspberrypi automatically connect to your h
 Install the NeoPixel Driver as follows 
 
 >`sudo apt-get install build-essential python-dev git scons swig`
+>
 >`sudo pip3 install --upgrade setuptools`
+>
 >`sudo pip3 install rpi_ws281x`
+>
 >`cd rpi_ws281x`
+>
 >`scons`
+>
 >`cd python`
+>
 >`sudo python setup.py install`
+>
 >`cd examples/`
+>
 >`sudo python strandtest.py`
 
 # Supplies Needed
 
-RaspberryPi Zero
+**RaspberryPi Zero**
 
-USB WIFI (if not a PiZero W)
+![RaspberryPi Zero](https://raw.githubusercontent.com/khinds10/WeatherJar/master/construction/PiZero.jpg)
 
-NeoPixel Ring
+**USB WIFI (if not a PiZero W)**
+
+![USB WIFI (if not a PiZero W)](https://raw.githubusercontent.com/khinds10/WeatherJar/master/construction/wifi.jpg)
+
+**NeoPixel Ring**
+
+![NeoPixel Ring](https://raw.githubusercontent.com/khinds10/WeatherJar/master/construction/neoring.jpg)
 
 # Building the WeatherJar
 
@@ -164,9 +182,13 @@ Create the Apache configuration to point to this project (Python Flask API)
 Required Packages for Python Flash on Apache
 
 `$> sudo apt-get install libapache2-mod-wsgi python-dev python-pip python-pil`
+
 `$> sudo a2enmod wsgi`
+
 `$> sudo service apache2 restart`
+
 `$> pip install flask`
+
 
     <VirtualHost *:80>
         ServerAdmin webmaster@mytempuratureapi.com
@@ -190,6 +212,8 @@ You can now ask for RGB NeoPixel color gradients for given environment temperatu
 
 http://mytempuratureapi.com/neopixel?temperature=72
 
-Be sure to place this new URL you generated in your project settings so you can now have the weather jar respond to your current outdoor temperatures.
+**Color Range 0 to 100*F**
+
+![Color Range 0 to 100*F](https://raw.githubusercontent.com/khinds10/WeatherJar/master/webserver/neopixel.png)Be sure to place this new URL you generated in your project settings so you can now have the weather jar respond to your current outdoor temperatures.
 
 # Finished!
