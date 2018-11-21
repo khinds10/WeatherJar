@@ -159,6 +159,10 @@ Install the NeoPixel Driver as follows
 
 ![NeoPixel Ring](https://raw.githubusercontent.com/khinds10/WeatherJar/master/construction/neoring.jpg)
 
+**Frosted Lamp Shade**
+
+![Frosted Lamp Shade](https://raw.githubusercontent.com/khinds10/WeatherJar/master/construction/lamp-shade.jpg)
+
 # Building the WeatherJar
 
 Solder the leads to connect the NeoPixel Ring to the Pi, needs 5V, GND and GPIO pin 18 connected
@@ -188,7 +192,6 @@ Required Packages for Python Flash on Apache
 `$> sudo service apache2 restart`
 
 `$> pip install flask`
-
 
     <VirtualHost *:80>
         ServerAdmin webmaster@mytempuratureapi.com
