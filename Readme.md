@@ -161,7 +161,7 @@ Install the NeoPixel Driver as follows
 
 **Frosted Lamp Shade**
 
-![Frosted Lamp Shade](https://raw.githubusercontent.com/khinds10/WeatherJar/master/construction/lamp-shade.jpg)
+![Frosted Lamp Shade](https://raw.githubusercontent.com/khinds10/WeatherJar/master/construction/lamp-shade.png)
 
 # Building the WeatherJar
 
