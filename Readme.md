@@ -97,7 +97,7 @@ Add the following lines to have your raspberrypi automatically connect to your h
 >
 >$ `sudo apt-get upgrade`
 >
->$ `sudo apt-get install vim git python-smbus i2c-tools python-imaging python-smbus build-essential python-dev rpi.gpio python3 python3-pip`
+>$ `sudo apt-get install memcached vim git python-smbus i2c-tools python-imaging python-smbus build-essential python-dev rpi.gpio python3 python3-pip python-memcache`
 
 **Update local timezone settings
 
@@ -214,6 +214,24 @@ Required Packages for Python Flash on Apache
 You can now ask for RGB NeoPixel color gradients for given environment temperatures
 
 http://mytempuratureapi.com/neopixel?temperature=72
+
+### Set pi user crontab 
+
+Enter the following line for a minute by minute crontab
+
+`$ crontab -e`
+
+`*/1 * * * * python /home/pi/WeatherJar/weather.py`
+
+### Set root user crontab (this library requires root access)
+
+Set "on reboot" to run the candle python script forever
+
+`$ sudo su`
+
+`$ crontab -e`
+
+`@reboot python /home/pi/WeatherJar/candle.py`
 
 **Color Range 0 to 100*F**
 
