@@ -58,21 +58,29 @@ def getGust():
     shuffle(windSpeed)
     return float(windSpeed[0])
 
-def rain():
-    """rain blinking effect"""
-    turnOnOff(2, 10, getDrop())
-    turnOnOff(3, 10, getDrop())
-    turnOnOff(7, 10, getDrop())
-    turnOnOff(11, 10, getDrop())
+def rain(temperatureColor):
+    """rain blinking effect"""    
+    # make the effect more pronounced for when the candle is already white
+    rainBrightness = 20
+    if temperatureColor == "#ffffff":
+        rainBrightness = 40
+    turnOnOff(2, rainBrightness, getDrop())
+    turnOnOff(3, rainBrightness, getDrop())
+    turnOnOff(7, rainBrightness, getDrop())
+    turnOnOff(11, rainBrightness, getDrop())
     
-def wind():
+def wind(temperatureColor):
     """wind faster blinking effect"""
-    turnOnOff(2, 5, getGust())
-    turnOnOff(3, 5, getGust())
-    turnOnOff(7, 5, getGust())
-    turnOnOff(11, 5, getGust())
+    # make the effect more pronounced for when the candle is already white
+    windBrightness = 10
+    if temperatureColor == "#ffffff":
+        windBrightness = 20
+    turnOnOff(2, windBrightness, getGust())
+    turnOnOff(3, windBrightness, getGust())
+    turnOnOff(7, windBrightness, getGust())
+    turnOnOff(11, windBrightness, getGust())
     
-def snow():
+def snow(temperatureColor):
     """snow fading effect"""
     count = 0
     while count < 50:
@@ -92,10 +100,10 @@ while True:
         strip.show()
         conditions = mc.get("CONDITIONS")
         if conditions == "RAIN":
-            rain()
+            rain(temperatureColor)
         if conditions == "WIND":
-            wind()
+            wind(temperatureColor)
         if conditions == "SNOW":
-            snow()
+            snow(temperatureColor)
     except (Exception):
         time.sleep(1)

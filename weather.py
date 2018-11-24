@@ -16,20 +16,15 @@ while count < 10:
         # get the color for the current temp and set the jar to glow in that color
         colorInfo = subprocess.check_output(['curl', settings.tempColorAPI + '/neopixel?temperature=' + str(int(currentFeelsLikeTemp))   ])
         mc.set("TEMPERATURE", str(colorInfo))
-        
-        #weatherInfo['currently']['precipProbability'] = 1
-  
-        # @TODO
-        # if the temp is in the "white" color range  it should be brighter blinking
-        # get the snow / rain conditions working
-        # get the wind conditions working
-        # if there's no special condition, then just "NONE"
-        
         mc.set("CONDITIONS", "NONE")
-
+        if weatherInfo['currently']['precipProbability'] == 1:
+            if weatherInfo['currently']['precipType'] == "snow":
+                mc.set("CONDITIONS", "SNOW")    
+            if weatherInfo['currently']['precipType'] == "rain":
+                mc.set("CONDITIONS", "RAIN")
+        else:
+            if weatherInfo['currently']['windSpeed'] > 25:
+                mc.set("CONDITIONS", "WIND")
         break
     except (Exception):
         time.sleep(10)
-
-
-
