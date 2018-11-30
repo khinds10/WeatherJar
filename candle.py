@@ -8,13 +8,13 @@ from random import *
 mc = memcache.Client(['127.0.0.1:11211'], debug=0)
 
 # rain raindrops timeout length (generated randomly) 
-rainDrops = ['0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8']
+rainDrops = ['0.1', '0.2', '0.3', '0.4', '0.8', '0.9']
 
 # wind speed timeout length (generated randomly) 
 windSpeed = ['0.02', '0.03', '0.04', '0.05', '0.06', '0.07', '0.08']
 
 # LED strip configuration:import settings as settings
-LED_COUNT      = 24     # Number of LED pixels.
+LED_COUNT      = 16     # Number of LED pixels.
 LED_PIN        = 18      # GPIO pin connected to the pixels (18 uses PWM!).
 LED_FREQ_HZ    = 800000  # LED signal frequency in hertz (usually 800khz)
 LED_DMA        = 10      # DMA channel to use for generating signal (try 10)
@@ -29,6 +29,11 @@ LED_CHANNEL    = 0       # set to '1' for GPIOs 13, 19, 41, 45 or 53
 # setup the strip
 strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL, ws.WS2811_STRIP_GRB)
 strip.begin()
+
+# set all pixels to black
+for i in range(0, strip.numPixels()):
+    strip.setPixelColor(i, Color(0, 0, 0))
+strip.show()
 
 def hexToRGB(value):
     value = value.lstrip('#')
@@ -61,9 +66,9 @@ def getGust():
 def rain(temperatureColor):
     """rain blinking effect"""    
     # make the effect more pronounced for when the candle is already white
-    rainBrightness = 20
+    rainBrightness = 50
     if temperatureColor == "#ffffff":
-        rainBrightness = 40
+        rainBrightness = 100
     turnOnOff(2, rainBrightness, getDrop())
     turnOnOff(3, rainBrightness, getDrop())
     turnOnOff(7, rainBrightness, getDrop())
@@ -72,9 +77,9 @@ def rain(temperatureColor):
 def wind(temperatureColor):
     """wind faster blinking effect"""
     # make the effect more pronounced for when the candle is already white
-    windBrightness = 10
+    windBrightness = 25
     if temperatureColor == "#ffffff":
-        windBrightness = 20
+        windBrightness = 50
     turnOnOff(2, windBrightness, getGust())
     turnOnOff(3, windBrightness, getGust())
     turnOnOff(7, windBrightness, getGust())
@@ -83,12 +88,12 @@ def wind(temperatureColor):
 def snow(temperatureColor):
     """snow fading effect"""
     count = 0
-    while count < 50:
+    while count < 255:
         count = count + 1
-        setEventPin(11, count, 0.04)
+        setEventPin(11, count, 0.005)
     while count > 0:
         count = count - 1
-        setEventPin(11, count, 0.04)
+        setEventPin(11, count, 0.005)
 
 # run the candle infinitely, getting the current temp and conditions
 while True:
