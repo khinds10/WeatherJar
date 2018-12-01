@@ -1,9 +1,15 @@
-# WeatherJar - Weather and Temperature at a glance
-Using this magic jar, you can tell the current temperature and conditions outside instantly
+# WeatherCandle - Weather and Temperature at a glance
+Using this magic candle, you can tell the current temperature and conditions outside instantly
+
+![Color Range 0 to 100*F](https://raw.githubusercontent.com/khinds10/WeatherJar/master/construction/main-image.png)
+
+![Color Range 0 to 100*F](https://raw.githubusercontent.com/khinds10/WeatherJar/master/construction/range.png)
 
 **Color Range 0 to 100*F**
 
-![Color Range 0 to 100*F](https://raw.githubusercontent.com/khinds10/WeatherJar/master/webserver/neopixel.png)
+### Animations in Action
+
+### [![IMAGE ALT TEXT](http://img.youtube.com/vi/RNsYiCd4rvg/0.jpg)](https://www.youtube.com/watch?v=RNsYiCd4rvg "Weather Candle")
 
 #### Flashing RaspberriPi Hard Disk / Install Required Software (Using Ubuntu Linux)
 
