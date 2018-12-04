@@ -177,7 +177,17 @@ Solder the leads to connect the NeoPixel Ring to the Pi, needs 5V, GND and GPIO 
 
 WIRING DIAGRAM HERE
 
-CONSTRUCTION PICTURES HERE
+![Internal Assembly](https://raw.githubusercontent.com/khinds10/WeatherJar/master/construction/build/weather-candle0.jpg)
+
+![Internal Assembly](https://raw.githubusercontent.com/khinds10/WeatherJar/master/construction/build/weather-candle1.jpg)
+
+![Wire Power](https://raw.githubusercontent.com/khinds10/WeatherJar/master/construction/build/weather-candle2.jpg)
+
+![Assembly Completed](https://raw.githubusercontent.com/khinds10/WeatherJar/master/construction/build/weather-candle3.jpg)
+
+![Assembly Completed](https://raw.githubusercontent.com/khinds10/WeatherJar/master/construction/build/weather-candle4.jpg)
+
+
 
 # Creating the Temperature API
 
