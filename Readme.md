@@ -177,7 +177,7 @@ Solder the leads to connect the NeoPixel Ring to the Pi, needs 5V, GND and GPIO 
 
 ### Wiring the Components
 
-![Internal Assembly](https://raw.githubusercontent.com/khinds10/WeatherJar/master/construction/build/wiringdiagram.jpg)
+![Internal Assembly](https://raw.githubusercontent.com/khinds10/WeatherJar/master/construction/build/wiringdiagram.png)
 
 Connect the NeoPixel to 5v and GND on the RPi, connect the "in" pin on the NeoPixel ring to GPIO Pin #18
 
