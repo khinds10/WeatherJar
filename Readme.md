@@ -175,19 +175,33 @@ Solder the leads to connect the NeoPixel Ring to the Pi, needs 5V, GND and GPIO 
 
 *Note: since we're only using one ring with not ever showing full brightness / bright white colors, we can rely on the power source of the RPi itself.  Ordinarily they recommend the 5050 RGB pixesl such as these to have their own power source.
 
-WIRING DIAGRAM HERE
+### Wiring the Components
+
+![Internal Assembly](https://raw.githubusercontent.com/khinds10/WeatherJar/master/construction/build/wiringdiagram.jpg)
+
+Connect the NeoPixel to 5v and GND on the RPi, connect the "in" pin on the NeoPixel ring to GPIO Pin #18
+
+## Print the Enclosure
+
+In the 3D-Print/ folder of this project, print the lid and the base of the candle to contain the device.
+
+## Build the Candle
+
+Using a hot glue gun, glue the pi zero to the bottom of the candle base
 
 ![Internal Assembly](https://raw.githubusercontent.com/khinds10/WeatherJar/master/construction/build/weather-candle0.jpg)
 
 ![Internal Assembly](https://raw.githubusercontent.com/khinds10/WeatherJar/master/construction/build/weather-candle1.jpg)
 
+Drill a hole to allow for the power USB cable to come in
+
 ![Wire Power](https://raw.githubusercontent.com/khinds10/WeatherJar/master/construction/build/weather-candle2.jpg)
+
+I've used some simple tape to hold the NeoPixel Ring to the button of the candle, tucking the wires away to ensure the light is blocked by any strange shadows inside.
 
 ![Assembly Completed](https://raw.githubusercontent.com/khinds10/WeatherJar/master/construction/build/weather-candle3.jpg)
 
 ![Assembly Completed](https://raw.githubusercontent.com/khinds10/WeatherJar/master/construction/build/weather-candle4.jpg)
-
-
 
 # Creating the Temperature API
 
